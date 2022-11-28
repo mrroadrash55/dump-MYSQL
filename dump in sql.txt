@@ -1,0 +1,19 @@
+mysqldump -u test -pSolartis@5 -P 3306 -h 3.88.105.87 --databases repo --tables PACKAGE --no-data --routines --events > dump.sql
+
+(or) view the dump.sql and copy the schema and execute
+     
+	 CREATE TABLE `PACKAGE` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `SERVICENAME` varchar(100) NOT NULL,
+  `URL` varchar(100) NOT NULL,
+  `CREATED_DATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+get into the dump.sql path and run 
+
+1->mysql -u relusr -p -P 3400 -h 10.100.16.51 -A
+2-> use provisioningdb;
+3-> \. dump.sql -------run the dump file
+
+
